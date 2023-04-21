@@ -1,0 +1,24 @@
+{
+  "cars": [
+    {
+      "model": "BMW ",
+      "year": "2022",
+      "number": "AA8888",
+      "color": "green",
+      "type": "sedan",
+      "isNew": "true",
+      "vEngine": "3",
+      "id": 1
+    },
+    {
+      "model": "bmw",
+      "year": "2020",
+      "number": "AA8888",
+      "color": "red",
+      "type": "sedan",
+      "isNew": "true",
+      "vEngine": "3",
+      "id": 2
+    }
+  ]
+}
