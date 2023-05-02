@@ -1,0 +1,22 @@
+{
+  "cars": [
+    {
+      "model": "opel",
+      "price": "2300",
+      "year": 1995,
+      "id": 1
+    },
+    {
+      "model": "mazda",
+      "price": "3000",
+      "year": 2005,
+      "id": 2
+    },
+    {
+      "model": "lexus",
+      "price": "9000",
+      "year": 1990,
+      "id": 3
+    }
+  ]
+}

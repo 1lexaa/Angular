@@ -1,0 +1,14 @@
+<hr />
+<br />
+<p [ngStyle]="{ 'font-size': fontSize, color: 'blue' }">
+  ID: {{ car.id }} {{ car.model }}
+</p>
+<hr />
+<br />
+<div [ngSwitch]="car.model" [ngClass]="{ text: true }">
+  <p *ngSwitchCase="'opel'">This is opel</p>
+  <p *ngSwitchCase="'audi'">This is audi</p>
+  <p *ngSwitchCase="'bmw'">This is bmw</p>
+</div>
+<!-- {{ printMessage() }} -->
+<input type="text" [value]="car.model" />

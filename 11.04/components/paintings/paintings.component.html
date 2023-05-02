@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="paintings.component.css">
+    <title>Paintings</title>
+</head>
+<body>
+    <div class="Gallery">
+        <div class="card" *ngFor="let painting of gallery" (click)="toggleZoom(painting)">
+          <img [src]="painting.GetPhoto" alt="Artwork">
+          <div class="card-body">
+            <h5 class="card-title">{{painting.GetName}}</h5>
+            <p class="card-text">Author: {{painting.GetAuthor}}</p>
+            <p class="card-text">Year of creation: {{painting.SetAuthor}}</p>
+            <p class="card-text">Dimensions: {{painting.GetDimensionsy}}</p>
+            <p class="card-text">Location: {{painting.GetLocation}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="overlay" *ngIf="showZoom">
+        <img [src]="selectedPainting.GetPhoto" alt="Artwork" (click)="toggleZoom()">
+      </div>
+</body>
+</html>

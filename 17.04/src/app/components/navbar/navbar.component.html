@@ -1,0 +1,23 @@
+<p>
+  <mat-toolbar>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Car App</span>
+    <span class="example-spacer"></span>
+    <div class="example-button-row">
+      <button mat-raised-button routerLink="home">Home</button>
+      <button mat-raised-button routerLink="list-cars">List</button>
+      <button mat-raised-button (click)="addCar()">Add Car</button>
+      <button mat-raised-button routerLink="about">About</button>
+    </div>
+    <div *ngIf="weather">
+      <h2>{{ weather.temperature }}°C</h2>
+      <p>{{ weather.weather_descriptions[0] }}</p>
+    </div>
+  </mat-toolbar>
+</p>

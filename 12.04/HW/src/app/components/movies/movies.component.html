@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+</head>
+<body>
+    <form>
+        <input type="text" [(ngModel)]="title" name="movieTitle" placeholder="Enter movie title">
+        <button type="button" (click)="getMovieInfo()">Search</button>
+    </form>
+    <div *ngIf="movies">
+        <img [src]="movies.Poster" alt="{{ movies.Title }} poster">
+        <h2>{{ movies.Title }}</h2>
+        <p>Year: {{ movies.Year }}</p>
+        <p>Rating: {{ movies.imdbRating }}</p>
+        <p>Duration: {{ movies.Runtime }}</p>
+        <p>Director: {{ movies.Director }}</p>
+        <p>Box Office: {{ movies.BoxOffice }}</p>
+        <p>Actors:
+          <span *ngFor="let actor of movies.Actors.split(',').slice(0, 3); let last = last">
+            {{ actor }}{{ last ? '' : ', ' }}
+          </span>
+        </p>
+        <p>Description: {{ showFullPlot ? movies.Plot : movies.Plot.slice(0, 100) + '...' }}</p>
+        <button (click)="togglePlot()">Show {{ showFullPlot ? 'Less' : 'More' }}</button>
+        <label for="plot-length">Plot Length:</label>
+        <select name="plot-length" id="plot-length" [(ngModel)]="showFullPlot">
+          <option value="false">Short</option>
+          <option value="true">Long</option>
+        </select>
+      </div>
+</body>
+</html>

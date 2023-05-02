@@ -1,0 +1,10 @@
+.counter{
+    font-family: sans-serif;
+    margin: 0 auto;
+    width: 30vw;
+    height: 250px;
+}
+
+button{
+    margin-left: 10px;
+}

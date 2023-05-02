@@ -1,0 +1,22 @@
+<p>Template-Driven Forms</p>
+<form #carForm="ngForm" (ngSubmit)="addCar(carForm.value)">
+  <label
+    >Model
+    <input type="text" name="model" [(ngModel)]="car.model" />
+  </label>
+  <label
+    >Price
+    <input type="text" name="price" [(ngModel)]="car.price" />
+  </label>
+  <label>
+    Year (1990-2023)
+    <input
+      type="number"
+      name="year"
+      min="1990"
+      max="2023"
+      [(ngModel)]="car.year"
+    />
+  </label>
+  <button type="submit">Add</button>
+</form>

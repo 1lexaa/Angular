@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIZ</title>
+</head>
+<body>
+    <div class="container">
+        <div *ngIf="!quizStarted">
+          <h2>Welcome to the Quiz!</h2>
+          <p>Click the button below to start.</p>
+          <button (click)="startQuiz()">Start Quiz</button>
+        </div>
+        <div *ngIf="quizStarted && !quizFinished">
+            <div class="timer">{{ minutesLeft }} : {{ secondsLeft < 10 ? '0' + secondsLeft : secondsLeft }}</div>
+            <div class="timer">{{ minutesLeft }} : {{ secondsLeft < 10 ? '0' + secondsLeft : secondsLeft }}</div>
+          <h2>Question {{ currentQuestionIndex + 1 }} of {{ quizLength }}</h2>
+          <p>{{ currentQuestion.question }}</p>
+          <div *ngFor="let option of currentQuestion.options">
+            <label>
+              <input type="radio" name="answer" [value]="option" (change)="answerChanged($event)">{{ option }}
+            </label>
+          </div>
+          <button (click)="nextQuestion()" [disabled]="!answerSelected">Next</button>
+        </div>
+        <div *ngIf="quizFinished">
+            <h2>Quiz Finished!</h2>
+            <p>Score: {{ score }} / {{ quizLength }}</p>
+            <p>Correct answers: {{ correctAnswers }}</p>
+            <p>Incorrect answers: {{ incorrectAnswers }}</p>
+            <p>Time taken: {{ timeTaken }} minutes</p>
+            <button (click)="startQuiz()">Play Again</button>
+          </div>
+    </div>
+</body>
+</html>

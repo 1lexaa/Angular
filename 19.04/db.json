@@ -1,0 +1,40 @@
+{
+  "cars": [
+    {
+      "model": "jdhfjshj",
+      "year": "0222",
+      "number": "ldlls;d",
+      "color": "green",
+      "type": "sedan",
+      "isNew": "true",
+      "vEngine": "0sca",
+      "id": 1
+    },
+    {
+      "model": "aaaa",
+      "year": "0aaaa",
+      "number": "aaaa",
+      "color": "blue",
+      "type": "sedan",
+      "isNew": "true",
+      "vEngine": "0aaaa",
+      "id": 2
+    },
+    {
+      "model": "NIII",
+      "year": "332",
+      "number": "kzkzk",
+      "color": "green",
+      "type": "sedan",
+      "isNew": "true",
+      "vEngine": "2,2",
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "username": "VOLKOV",
+      "password": "123"
+    }
+  ]
+}
